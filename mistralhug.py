@@ -62,6 +62,9 @@ def chat():
         alex_reply = response[len(full_prompt):].split("User:")[0].strip()
 
         print(f"Alex: {alex_reply}\n")
+        
+        with open("output.txt", "w", encoding="utf-8") as f:
+            f.write(alex_reply)
 
         conversation_history += f" {alex_reply}\n"
 
